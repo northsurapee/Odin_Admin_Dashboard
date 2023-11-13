@@ -1,0 +1,327 @@
+/* Step 1 : Set up and planning */
+/* Reset CSS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1.2;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* WHOLE BODY */
+body {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 4fr;
+    height: 100vh;
+    font-family: 'Roboto';
+}
+
+/* side-bar */
+.side-bar {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    padding: 20px;
+    background-color: rgba(25,146,212,255);
+    color: white;
+}
+
+.logo-container {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.option {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+
+    font-weight: 100;
+}
+
+.top-menu,
+.bottom-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* header */
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    padding: 20px;
+    font-weight: 500;
+
+    box-shadow: 0px 2px 3px rgb(175, 175, 175);
+    z-index: 2;
+}
+
+.header > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header > div > div {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+input {
+    padding: 5px 20px;
+    width: 400px;
+    height: 20px;
+    background-color: rgba(226,232,240,255);;
+    border: none;
+    border-radius: 20px;
+}
+
+.small-profile {
+    height: 40px;
+    width: 40px;
+    border: 1px solid rgba(226,232,240,255);;
+    border-radius: 100px;
+}
+
+.big-profile {
+    height: 80px;
+    width: 80px;
+    border: 1px solid rgba(226,232,240,255);;
+    border-radius: 100px;
+}
+
+p.greeting {
+    font-size: 0.8rem;
+}
+
+p.username {
+    font-size: 1.5rem;
+}
+
+.header-button {
+    cursor: pointer;
+    width: 80px;
+    height: 30px;
+    color: white;
+    background-color: rgba(25,146,212,255);;
+    border: none;
+    border-radius: 20px;
+}
+
+/* main-content */
+.main-content {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 25px;
+
+    padding: 25px 20px;
+    background-color: rgba(226,232,240,255);
+}
+
+/* project-section */
+.project-section {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    height: 100%;
+}
+
+.card { /* announcements & trending too */
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 2px 3px rgb(175, 175, 175);
+}
+
+.project-section .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    background-image: -webkit-linear-gradient(left, #88c7ff, #88c7ff 2%, transparent 2%, transparent 100%);
+}
+
+.bot-card {
+    align-self: flex-end;
+    display: flex;
+    gap: 10px;
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+h4 {
+    font-weight: 500;
+}
+
+.project-section .card p {
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+
+/* announcements-section */
+.announcements-section {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.trend-section .card,
+.announcements-section .card {
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    gap: 15px;
+}
+
+h5 {
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding-bottom: 5px;
+}
+
+.announcements-section .card p,
+.trend-section .card p {
+    font-size: 0.7rem;
+    font-weight: 300;
+}
+
+.announcements-section .card > div:nth-child(2) {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 10px 0px;
+    
+}
+
+/* trend-selection */
+.trend-section {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.trend-section .card > div {
+    display: flex;
+    gap: 10px;
+}
+
+/* Image adjustment */
+img.logo {
+    height: 60px;
+    width: 60px;
+}
+
+img.icon,
+img.side-icon {
+    height: 25px;
+    width: 25px;
+}
+
+img.card-icon {
+    height: 20px;
+    width: 20px;
+}
+
+.side-bar img {
+    filter: invert(1); /* This will invert the colors, turning the SVG white */
+  }
+
+/* Responsive */
+button,
+.logo-container,
+.option,
+.icon,
+.small-profile,
+.big-profile,
+h4,
+h5,
+.other-account,
+.card-icon {
+    transition: transform 0.05s ease-in-out;
+    cursor: pointer;
+}
+
+button:hover,
+.logo-container:hover,
+.option:hover,
+.icon:hover,
+.small-profile:hover,
+.big-profile:hover,
+h4:hover,
+h5:hover,
+.other-account:hover,
+.card-icon:hover {
+    transform: scale(1.05); /* Increase the size on hover */
+    opacity: 0.5;
+}
+
